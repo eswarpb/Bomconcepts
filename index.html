@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         .form-container {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #171616;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+         }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #f6f5f5;
+        }
+        input[type="text"], input[type="email"], input[type="number"], input[type="date"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #btn{  background-color: #04AA6D;
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+}
+#btn1{  background-color: #04AA6D;
+            
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration:none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+          
+              }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+    <form id="form-container">
+            <div id="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div id="form-group" >
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <div id="form-group">
+                <label for="idnumber">ID Number:</label>
+                <input type="number" id="idnumber" name="idnumber" required>
+            </div>
+            <div id="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div id="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="number" id="phone" name="phone" required>
+            </div>
+            <div id="form-group">
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+            <button id="btn">save</button>
+    </form>
+    
+</div>
+<p id="pr"></p>
+<div id="pe"></div>
+<button id="btn1">next</button>
+    <script>
+        let name=document.getElementById("name")
+        let pr=document.getElementById("pr")
+        let dob = document.getElementById("dob")
+        let idNumber = document.getElementById("idnumber")
+        let email = document.getElementById("email")
+        let phone = document.getElementById("phone")
+        let address = document.getElementById("address")
+        let btn=document.getElementById("btn")
+       let pe=document.getElementById("pe")
+
+        btn.addEventListener("click",(e)=>{
+            e.preventDefault(); 
+
+            localStorage.setItem("name",name.value)
+            localStorage.setItem("dob",dob.value)
+            localStorage.setItem("idnumber",idnumber.value)
+            localStorage.setItem("email",email.value)
+            localStorage.setItem("phone",phone.value)
+            localStorage.setItem("address",address.value)
+            sessionStorage.setItem("name",name.value)
+            sessionStorage.setItem("dob",dob.value)
+            sessionStorage.setItem("idnumber",idnumber.value)
+            sessionStorage.setItem("email",email.value)
+            sessionStorage.setItem("phone",phone.value)
+            sessionStorage.setItem("address",address.value)
+          let p1=localStorage.getItem("name")
+          p2=sessionStorage.getItem("email")
+         window.alert("your details is saved")
+            pr.innerText=p1;
+            pe.innerText=p2;
+
+        })
+        let btn1=document.getElementById("btn1")
+         btn1s.addEventListener("click",()=>{
+            window.alert("welcome")
+            window.prompt("enter your name ")
+            window.confirm("are your sure want leave this page")
+            location.assign("https://www.w3schools.com/js/js_window.asp")
+         })
+
+    </script>
+</body>
+</html>
